@@ -51,6 +51,13 @@ app.delete("/uncharted/:indexOfScientist", (req, res) => {
 })
 
 // U PDATE
+app.put("/uncharted/:indexOfScientist", (req, res) => {
+  //:indexOfScientist is the index of our scientists array that we want to change
+  scientists[req.params.indexOfScientist] = req.body;
+  //in our scientists array, find the index that is specified in the url (:indexOfScientist).  Set that element to the value of req.body (the input data)
+  res.redirect("/uncharted"); //redirect to the index page
+})
+
 // C REATE
 app.post("/uncharted", (req, res) => {
   scientists.push(req.body);
@@ -58,6 +65,13 @@ app.post("/uncharted", (req, res) => {
 })
 
 // E DIT
+app.get("/uncharted/:indexOfScientist/edit", (req, res) => {
+  res.render("edit.ejs", {
+    scientist: scientists[req.params.indexOfScientist],
+    index: req.params.indexOfScientist,
+  })
+})
+
 // S HOW
 app.get("/uncharted/:indexScientist", (req, res) => {
   res.render("show.ejs", {
