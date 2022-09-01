@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <%- include('./partials/head.ejs')%>
+</head>
+
+<body>
+
+  <div class="body-overlay">
+    <!-- ============ HEADER ============ -->
+    <!-- <%- include('./partials/header.ejs')%> -->
+    <!-- ============ MAIN ============ -->
+    <main>
+      <nav>
+        <a href="/uncharted/new">Add a Scientist</a>
+      </nav>
+      <div>
+        <h1>Scientists</h1>
+        <ul>
+          <% for(let i=0; i < scientists.length; i++) { %>
+            <li><a href="/uncharted/<%=i%>">
+                <%= scientists[i].name %>
+              </a>
+              <!--  ADD DELETE FORM HERE-->
+              <form action="/uncharted/<%=i; %>?_method=DELETE" method="POST">
+                <input type="submit" value="DELETE">
+              </form>
+            </li>
+            <% } %>
+        </ul>
+      </div>
+    </main>
+    <!-- ============ FOOTER ============ -->
+    <!-- <%- include('./partials/footer.ejs')%> -->
+  </div>
+</body>
+
+</html>

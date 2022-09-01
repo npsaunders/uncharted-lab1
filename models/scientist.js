@@ -1,0 +1,3 @@
+scientists = [];
+
+module.exports = scientists;

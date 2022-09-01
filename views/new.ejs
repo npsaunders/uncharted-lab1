@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <%- include('./partials/head.ejs')%>
+</head>
+
+<body>
+  <div class="body-overlay">
+    <!-- ============ HEADER ============ -->
+    <!-- <%- include('./partials/header.ejs')%> -->
+    <!-- ============ MAIN ============ -->
+    <main class="show-main">
+      <h1>Add Scientist</h1><br />
+      <form action="/uncharted" method="POST">
+        <input type="text" placeholder="name" name="name" required /><br />
+        <input type="text" placeholder="description" description="description" required /><br />
+        <input type="submit" value="Add Scientist" />
+      </form>
+    </main>
+    <!-- ============ FOOTER ============ -->
+    <!-- <%- include('./partials/footer.ejs')%> -->
+  </div>
+</body>
+
+</html>
